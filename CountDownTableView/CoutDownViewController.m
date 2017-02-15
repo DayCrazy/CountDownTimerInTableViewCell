@@ -44,11 +44,8 @@
     showTableView.delegate = self;
     showTableView.dataSource = self;
     [showTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"showTableViewCell"];
-    //    [showTableView registerClass:[countDownTableViewCell class] forCellReuseIdentifier:@"countDownTableViewCell"];
     [self.view addSubview:showTableView];
     
-//    _dataArray = [NSMutableArray arrayWithObjects:@"30:00",@"30:10",@"30:20",@"30:30",@"30:40",@"30:50",@"30:00",@"30:10",@"30:35",@"30:40",nil];
-//    _dataArray = [NSMutableArray arrayWithObjects:@"123",@"2343",@"23",@"2134",@"4021",@"211",@"20",@"235",@"534",@"900", nil];
     _dataArray = self.dataArray;
     
     _timeInterval = 0;
@@ -62,10 +59,6 @@
     if (_dataArray == nil) {
         
         _dataArray = [NSMutableArray arrayWithObjects:@"2017-02-15  15:00:00",@"2017-02-15 15:00:10",@"2017-02-15 15:00:20",@"2017-02-15 15:00:00",@"2017-02-15 15:00:40",@"2017-02-15 15:00:50",@"2017-02-15 15:00:00",@"2017-02-15 15:00:10",@"2017-02-15 15:00:35",@"2017-02-15 15:00:40",nil];
-
-        
-//        _dataArray = [NSMutableArray arrayWithObjects:@"123",@"2343",@"23",@"2134",@"4021",@"211",@"20",@"235",@"534",@"900", nil];
-
     }
     
     return _dataArray;
@@ -116,7 +109,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    //    countDownTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"countDownTableViewCell"];
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"showTableViewCell"];
     
     NSString* timeStr = _dataArray[indexPath.row];
